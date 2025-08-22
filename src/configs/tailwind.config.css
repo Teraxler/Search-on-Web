@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --font-arial: "Arial";
+  --shadow-btn: 0 1px 2px 0 rgba(0, 0, 0, 0.3),
+    0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --shadow-search-bar: 0 1px 6px 0 #20212447;
+  --shadow-sm: 1px 1px rgba(0,0,0,.1)
+}
+
+@layer base {
+}
+
+@layer components {
+}
+
+@layer utilities {
+}
