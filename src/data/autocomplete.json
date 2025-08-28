@@ -1,0 +1,21 @@
+{
+  "searchParameters": {
+    "q": "apple",
+    "gl": "ir",
+    "type": "autocomplete",
+    "engine": "google"
+  },
+  "suggestions": [
+    { "value": "apple" },
+    { "value": "apple tv" },
+    { "value": "applebee's" },
+    { "value": "apple watch" },
+    { "value": "apple stock" },
+    { "value": "apple music" },
+    { "value": "applebees menu" },
+    { "value": "apple support number" },
+    { "value": "apple store near me" },
+    { "value": "apple support" }
+  ],
+  "credits": 1
+}
