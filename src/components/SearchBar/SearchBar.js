@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getAutoCompeleteSuggestions } from "../../services/autoComplete.service";
 import { CgSearch } from "react-icons/cg";
-import { MdKeyboardVoice } from "react-icons/md";
 import SuggestionItem from "./SuggestionItem";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 
 export default function SearchBar(props) {
   const [searchValue, setSearchValue] = useState(props.searchValue ?? "");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const params = useParams();
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +18,19 @@ export default function SearchBar(props) {
     if (searchValue.trim()) {
       timeoutId = setTimeout(async () => {
         setSuggestions(await getAutoCompeleteSuggestions(searchValue));
+
+        // setSuggestions([
+        //   { value: "apple" },
+        //   { value: "apple tv" },
+        //   { value: "applebee's" },
+        //   { value: "apple watch" },
+        //   { value: "apple stock" },
+        //   { value: "apple music" },
+        //   { value: "applebees menu" },
+        //   { value: "apple support number" },
+        //   { value: "apple store near me" },
+        //   { value: "apple support" },
+        // ]);
       }, 250);
     } else {
       setSuggestions([]);
@@ -25,10 +39,15 @@ export default function SearchBar(props) {
     return () => clearTimeout(timeoutId);
   }, [searchValue]);
 
+  useEffect(() => {
+    params.q && setSearchValue(params.q);
+  }, [params]);
+
   function searchHandler(event) {
     event.preventDefault();
 
     navigate(`/result/${searchValue}`);
+    setShowSuggestions(false);
   }
 
   function navigateHandler(newValue) {
@@ -55,9 +74,8 @@ export default function SearchBar(props) {
               title="Search"
               type="search"
             />
-            {/* <MdKeyboardVoice className="absolute right-24 top-1/2 -translate-y-1/2 size-5" /> */}
             <Link
-              to={`/ai-mode/${searchValue}`}
+              // to={`/result/ai/${searchValue}`}
               className="absolute right-4 top-1/2 -translate-y-1/2 flex gap-x-0.75 items-center justify-center text-[#1f1f1f] bg-[#f3f5f6] rounded-full h-8 pl-2 py-2 pr-3 cursor-pointer"
             >
               <svg

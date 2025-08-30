@@ -1,8 +1,7 @@
 
-
-export default function Footer() {
+export default function Footer(props) {
   return (
-    <footer className="font-arial text-sm w-full px-5 bg-[#f2f2f2] text-[#1f1f1f] absolute bottom-0">
+    <footer className={`font-arial text-sm w-full pt-6 pb-3 bg-[#f2f2f2] text-[#1f1f1f] ${props.className}`}>
       <div className="flex justify-evenly flex-wrap">
         <div className="flex">
           <a

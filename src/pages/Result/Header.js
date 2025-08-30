@@ -1,17 +1,17 @@
-
 import { CgMenuGridO } from "react-icons/cg";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import logo from "../../assets/logo/google_logo.svg";
-import { useParams } from "react-router";
+
+import { Link, useParams } from "react-router";
+import Logo from "../../components/Logo/Logo";
 
 export default function Header() {
   const params = useParams();
 
   return (
     <header className="flex items-center justify-around lg:justify-between h-15.5 p-2.5 text-[13px] font-arial absolute top-5 left-0 right-0">
-      <div className="hidden lg:block pt-1 pl-6 pr-11">
-        <img className="h-7.5" src={logo} alt="Logo" />
-      </div>
+      <Link to={"/"}>
+        <Logo className="hidden lg:block mt-1 ml-6 mr-11 w-23 h-7.5" />
+      </Link>
       <SearchBar searchValue={params.q} />
       <nav>
         <ul className="hidden sm:flex items-center">
