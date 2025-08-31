@@ -1,5 +1,7 @@
+import { API_KEY as apiKey } from "../data/apiKeyes";
+
 const API_URL = "https://google.serper.dev";
-const API_KEY = "1c6a9afe3dca5e322f773c4575011a56b40ec25b";
+const API_KEY = apiKey;
 
 const MAX_NUMBER_RESULT = 10;
 
