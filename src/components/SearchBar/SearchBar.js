@@ -61,13 +61,13 @@ export default function SearchBar(props) {
         <form action="" onSubmit={searchHandler}>
           <div className="w-full flex relative">
             <CgSearch
-              className="absolute left-3.75 top-1/2 -translate-y-1/2 size-5 cursor-pointer"
+              className="absolute start-3.75 top-1/2 -translate-y-1/2 size-5 cursor-pointer"
               onClick={searchHandler}
             />
             <input
               id="search"
               placeholder="Search Google or type a url"
-              className="w-full pl-13.75 pr-30 h-12 outline-0 rounded-3xl"
+              className="w-full ps-13.75 pe-30 h-12 outline-0 rounded-3xl"
               onChange={(event) => setSearchValue(event.target.value)}
               value={searchValue}
               onFocus={() => setShowSuggestions(true)}
@@ -76,7 +76,7 @@ export default function SearchBar(props) {
             />
             <Link
               // to={`/result/ai/${searchValue}`}
-              className="absolute right-4 top-1/2 -translate-y-1/2 flex gap-x-0.75 items-center justify-center text-[#1f1f1f] bg-[#f3f5f6] rounded-full h-8 pl-2 py-2 pr-3 cursor-pointer"
+              className="absolute end-4 top-1/2 -translate-y-1/2 flex gap-x-0.75 items-center justify-center text-[#1f1f1f] bg-[#f3f5f6] rounded-full h-8 ps-2 py-2 pe-3 cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

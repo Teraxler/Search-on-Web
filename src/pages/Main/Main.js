@@ -1,4 +1,3 @@
-
 import Header from "./Header";
 
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -10,7 +9,7 @@ export default function Main() {
     <>
       <Header />
       <main className="flex flex-col justify-center items-center">
-      <Logo className="my-9.5 w-50 xs:w-60 sm:w-auto"/>
+        <Logo className="my-9.5 w-50 xs:w-60 sm:w-auto" />
 
         <div className="flex flex-col items-center w-full px-5">
           <SearchBar />

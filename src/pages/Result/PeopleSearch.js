@@ -1,4 +1,3 @@
-
 import { CgSearch } from "react-icons/cg";
 import { Link } from "react-router";
 
@@ -16,7 +15,7 @@ export default function PeopleSearch(porps) {
       <Link
         to={`/result/${porps.query}`}
         onClick={scrollTop}
-        className="flex items-center justify-between gap-x-4.5 py-3 pr-2 pl-4 hover:underline"
+        className="flex items-center justify-between gap-x-4.5 py-3 pe-2 ps-4 hover:underline"
       >
         <span className="text-[15px]/5 line-clamp-2 break-words">
           {porps.query}

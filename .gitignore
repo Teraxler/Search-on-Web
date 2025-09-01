@@ -5,16 +5,16 @@
 /.pnp
 .pnp.js
 
-/src/data
-
 # testing
 /coverage
 
 # production
 /build
+/data
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local

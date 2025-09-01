@@ -8,7 +8,7 @@ export default function WebSite(props) {
   return loading === false ? (
     <div className="max-w-full w-162.5">
       <div className="max-w-full flex gap-x-2 items-center">
-        {/* <div className="shrink-0 size-7 border border-[#d2d2d2] rounded-full mr-3">
+        {/* <div className="shrink-0 size-7 border border-[#d2d2d2] rounded-full me-3">
           <img src="" alt="" />
         </div> */}
         <a className="max-w-[calc(100%-24px)] flex flex-col" href={link}>
@@ -35,7 +35,7 @@ export default function WebSite(props) {
         </p>
       </div>
 
-      <div className="mt-3 pl-4.5">
+      <div className="mt-3 ps-4.5">
         {sitelinks
           ? sitelinks.map((sitelink) => (
               <SiteLink key={sitelink.title} {...sitelink} />
@@ -46,7 +46,7 @@ export default function WebSite(props) {
   ) : (
     <div className="max-w-full w-162.5">
       <div className="max-w-full flex gap-x-2 items-center">
-        {/* <div className="shrink-0 size-7 border border-[#d2d2d2] rounded-full mr-3">
+        {/* <div className="shrink-0 size-7 border border-[#d2d2d2] rounded-full me-3">
           <img src="" alt="" />
         </div> */}
         <div className="max-w-[calc(100%-24px)] flex flex-col">

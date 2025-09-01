@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export default function SuggestionItem(props) {
   return (
-    <li className="h-11 mr-4 rounded-r-3xl hover:bg-[#20212419]">
+    <li className="h-11 me-4 rounded-r-3xl hover:bg-[#20212419]">
       <div className="w-auto border-l-7 border-[#1a73e8] rounded-r-sm"></div>
       <Link
         onClick={() => props.onClick(props.value)}

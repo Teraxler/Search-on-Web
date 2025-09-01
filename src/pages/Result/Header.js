@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-around lg:justify-between h-15.5 p-2.5 text-[13px] font-arial absolute top-5 left-0 right-0">
       <Link to={"/"}>
-        <Logo className="hidden lg:block mt-1 ml-6 mr-11 w-23 h-7.5" />
+        <Logo className="hidden lg:block mt-1 ms-6 me-11 w-23 h-7.5" />
       </Link>
       <SearchBar searchValue={params.q} />
       <nav>
@@ -32,7 +32,7 @@ export default function Header() {
               className=""
             >
               <button
-                className="text-white bg-[#0b57d0] rounded-[100px] text-sm font-medium hover:shadow-btn transition-shadow duration-100 ease-out w-21.25 h-10 cursor-pointer ml-1"
+                className="text-white bg-[#0b57d0] rounded-[100px] text-sm font-medium hover:shadow-btn transition-shadow duration-100 ease-out w-21.25 h-10 cursor-pointer ms-1"
                 role="button"
               >
                 Sign in
