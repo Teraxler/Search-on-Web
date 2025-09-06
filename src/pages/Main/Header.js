@@ -2,7 +2,7 @@ import { CgMenuGridO } from "react-icons/cg";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-end h-15.5 p-2.5 text-[13px] font-arial">
+    <header className="flex items-center justify-end h-15.5 p-2.5 text-[13px]">
       <nav>
         <ul className="flex items-center">
           <li className="me-3.75">

@@ -1,4 +1,4 @@
-import logo from "../../assets/logo/google_logo.svg";
+import logo from "../../assets/logo/lgoo.png";
 
 export default function Logo(props) {
   return (

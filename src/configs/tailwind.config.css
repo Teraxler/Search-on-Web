@@ -1,13 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --font-arial: "Arial";
   --shadow-btn: 0 1px 2px 0 rgba(0, 0, 0, 0.3),
     0 1px 3px 1px rgba(0, 0, 0, 0.15);
   --shadow-search-bar: 0 1px 6px 0 #20212447;
   --shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.1);
 
   --breakpoint-xs: 30rem;
+  --font-vazirmatn: "Vazirmatn", sans-serif;
 }
 
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazirmatn/Vazirmatn-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  display: swap;
+}
 
+/* @font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazirmatn/static/Vazirmatn-Regular.ttf")
+    format("truetype");
+  display: "swap";
+  font-weight: 400;
+  font-style: normal;
+} */
+
+@layer base {
+  body {
+    @apply font-vazirmatn;
+  }
+}

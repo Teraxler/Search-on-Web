@@ -1,14 +1,16 @@
 // import { IoIosClose } from "react-icons/io";
 import { CgSearch } from "react-icons/cg";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 
 export default function SuggestionItem(props) {
+  const params = useParams();
+
   return (
     <li className="h-11 me-4 rounded-r-3xl hover:bg-[#20212419]">
       <div className="w-auto border-l-7 border-[#1a73e8] rounded-r-sm"></div>
       <Link
         onClick={() => props.onClick(props.value)}
-        to={`/result/${props.value}`}
+        to={`/result/${params.type ?? "all"}/${props.value}`}
         className="relative flex items-center gap-x-4 h-full px-4"
       >
         <CgSearch className="size-4" />

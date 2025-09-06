@@ -8,7 +8,7 @@ export default function Header() {
   const params = useParams();
 
   return (
-    <header className="flex items-center justify-around lg:justify-between h-15.5 p-2.5 text-[13px] font-arial absolute top-5 left-0 right-0">
+    <header className="flex items-center justify-around lg:justify-between h-15.5 p-2.5 text-[13px] absolute top-5 left-0 right-0">
       <Link to={"/"}>
         <Logo className="hidden lg:block mt-1 ms-6 me-11 w-23 h-7.5" />
       </Link>

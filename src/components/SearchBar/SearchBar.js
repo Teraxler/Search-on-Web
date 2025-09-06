@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getAutoCompeleteSuggestions } from "../../services/autoComplete.service";
 import { CgSearch } from "react-icons/cg";
 import SuggestionItem from "./SuggestionItem";
@@ -17,20 +17,20 @@ export default function SearchBar(props) {
 
     if (searchValue.trim()) {
       timeoutId = setTimeout(async () => {
-        setSuggestions(await getAutoCompeleteSuggestions(searchValue));
+        // setSuggestions(await getAutoCompeleteSuggestions(searchValue));
 
-        // setSuggestions([
-        //   { value: "apple" },
-        //   { value: "apple tv" },
-        //   { value: "applebee's" },
-        //   { value: "apple watch" },
-        //   { value: "apple stock" },
-        //   { value: "apple music" },
-        //   { value: "applebees menu" },
-        //   { value: "apple support number" },
-        //   { value: "apple store near me" },
-        //   { value: "apple support" },
-        // ]);
+        setSuggestions([
+          { value: "apple" },
+          { value: "apple tv" },
+          { value: "applebee's" },
+          { value: "apple watch" },
+          { value: "apple stock" },
+          { value: "apple music" },
+          { value: "applebees menu" },
+          { value: "apple support number" },
+          { value: "apple store near me" },
+          { value: "apple support" },
+        ]);
       }, 250);
     } else {
       setSuggestions([]);
@@ -46,7 +46,7 @@ export default function SearchBar(props) {
   function searchHandler(event) {
     event.preventDefault();
 
-    navigate(`/result/${searchValue}`);
+    navigate(`/result/${params.type ?? "all"}/${searchValue}`);
     setShowSuggestions(false);
   }
 
@@ -66,7 +66,7 @@ export default function SearchBar(props) {
             />
             <input
               id="search"
-              placeholder="Search Google or type a url"
+              placeholder="جست‌وجو کنید ..."
               className="w-full ps-13.75 pe-30 h-12 outline-0 rounded-3xl"
               onChange={(event) => setSearchValue(event.target.value)}
               value={searchValue}

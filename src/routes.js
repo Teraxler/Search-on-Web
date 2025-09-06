@@ -7,11 +7,11 @@ export const routes = [
     element: <Main />,
   },
   {
-    path: "/result/",
-    element: <Main />,
+    path: "/result/:type/:q",
+    element: <Result />,
   },
   {
-    path: "/result/:q",
-    element: <Result />,
+    path: "/*",
+    element: <Main />,
   },
 ];
