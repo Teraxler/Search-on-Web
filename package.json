@@ -19,7 +19,7 @@
     "tailwindcss": "^4.1.12",
     "web-vitals": "^2.1.4"
   },
-  "homepage": " https://Teraxler.github.io/Google",
+  "homepage": " https://Teraxler.github.io/Search-on-Web",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
