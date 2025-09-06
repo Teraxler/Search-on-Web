@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Search-on-Web/static/css/main.21dfda4f.css",
-    "main.js": "/Search-on-Web/static/js/main.4a0bb525.js",
-    "static/media/google_logo.svg": "/Search-on-Web/static/media/google_logo.ad24726276011f604925c1de56144bd8.svg",
+    "main.css": "/Search-on-Web/static/css/main.1f98e7d1.css",
+    "main.js": "/Search-on-Web/static/js/main.412aca8c.js",
+    "static/media/Vazirmatn-VariableFont_wght.ttf": "/Search-on-Web/static/media/Vazirmatn-VariableFont_wght.6b4464ac54ace78cff2f.ttf",
     "index.html": "/Search-on-Web/index.html",
-    "main.21dfda4f.css.map": "/Search-on-Web/static/css/main.21dfda4f.css.map",
-    "main.4a0bb525.js.map": "/Search-on-Web/static/js/main.4a0bb525.js.map"
+    "main.1f98e7d1.css.map": "/Search-on-Web/static/css/main.1f98e7d1.css.map",
+    "main.412aca8c.js.map": "/Search-on-Web/static/js/main.412aca8c.js.map"
   },
   "entrypoints": [
-    "static/css/main.21dfda4f.css",
-    "static/js/main.4a0bb525.js"
+    "static/css/main.1f98e7d1.css",
+    "static/js/main.412aca8c.js"
   ]
 }
