@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getAutoCompeleteSuggestions } from "../../services/autoComplete.service";
 import { CgSearch } from "react-icons/cg";
 import SuggestionItem from "./SuggestionItem";
@@ -17,20 +17,20 @@ export default function SearchBar(props) {
 
     if (searchValue.trim()) {
       timeoutId = setTimeout(async () => {
-        // setSuggestions(await getAutoCompeleteSuggestions(searchValue));
+        setSuggestions(await getAutoCompeleteSuggestions(searchValue));
 
-        setSuggestions([
-          { value: "apple" },
-          { value: "apple tv" },
-          { value: "applebee's" },
-          { value: "apple watch" },
-          { value: "apple stock" },
-          { value: "apple music" },
-          { value: "applebees menu" },
-          { value: "apple support number" },
-          { value: "apple store near me" },
-          { value: "apple support" },
-        ]);
+        // setSuggestions([
+        //   { value: "apple" },
+        //   { value: "apple tv" },
+        //   { value: "applebee's" },
+        //   { value: "apple watch" },
+        //   { value: "apple stock" },
+        //   { value: "apple music" },
+        //   { value: "applebees menu" },
+        //   { value: "apple support number" },
+        //   { value: "apple store near me" },
+        //   { value: "apple support" },
+        // ]);
       }, 250);
     } else {
       setSuggestions([]);
@@ -88,7 +88,7 @@ export default function SearchBar(props) {
               >
                 <path d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q26 0 49.5 5t45.5 15l-57 56q-9.32-2-18.64-3T384-744q-70 0-119 49t-49 119q0 70 49 119t119 49q58 0 102-33.5t59-86.5h74q-5 26-16 49.5T577-434l239 239-51 51Zm-69-336q0-90.33-62.84-153.16Q570.33-696 480-696q90.33 0 153.16-62.84Q696-821.67 696-912q0 90.33 62.84 153.16Q821.67-696 912-696q-90.33 0-153.16 62.84Q696-570.33 696-480Z" />
               </svg>
-              AI Mode
+              هوش مصنوعی
             </Link>
           </div>
         </form>

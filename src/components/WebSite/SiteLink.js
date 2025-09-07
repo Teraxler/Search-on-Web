@@ -1,4 +1,4 @@
-import { IoChevronForwardOutline } from "react-icons/io5";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 export default function SiteLink(props) {
   return (
@@ -11,7 +11,7 @@ export default function SiteLink(props) {
         </h3>
         <div>
           <a href={props.link} className="text-[#1a0dab] hover:underline">
-            <IoChevronForwardOutline width={24} height={24} />
+            <IoChevronBackOutline width={24} height={24} />
           </a>
         </div>
       </div>

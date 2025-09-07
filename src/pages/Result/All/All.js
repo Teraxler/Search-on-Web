@@ -294,7 +294,7 @@ export default function AllResults() {
         </div>
 
         {knowledgeGraph ? (
-          <div className="border-b sm:border-b-0 max-w-fit sm:border-s border-[#dadce0] ps-5 row-start-1 row-end-2 col-start-1 sm:col-start-8 lg:col-start-9 col-end-13">
+          <div className="border-b sm:border-b-0 max-w-fit sm:border-s border-[#dadce0] sm:ps-5 row-start-1 row-end-2 col-start-1 sm:col-start-8 lg:col-start-9 col-end-13">
             <IntroduceCard {...knowledgeGraph} />
           </div>
         ) : (
