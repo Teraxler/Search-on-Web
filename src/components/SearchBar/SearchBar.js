@@ -92,7 +92,7 @@ export default function SearchBar(props) {
             </Link>
           </div>
         </form>
-        {suggestions.length && showSuggestions ? (
+        {suggestions?.length && showSuggestions ? (
           <ul className="max-h-110 overflow-x-hidden overflow-y-auto mb-3 hidden">
             {suggestions.map((suggest) => (
               <SuggestionItem

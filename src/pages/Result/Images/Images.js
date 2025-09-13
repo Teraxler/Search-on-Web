@@ -37,7 +37,7 @@ export default function ImageResults() {
   }, []);
 
   useEffect(() => {
-    images.length && setIsLoaderVisible(true);
+    images?.length && setIsLoaderVisible(true);
   }, [images]);
 
   useEffect(() => {
@@ -922,7 +922,7 @@ export default function ImageResults() {
         },
       ];
 
-      if (data.length === 0) {
+      if (data?.length === 0) {
         setIsLoaderVisible(false);
         return;
       }
@@ -940,7 +940,7 @@ export default function ImageResults() {
       className="flex flex-wrap justify-start gap-5 p-5"
       id="images-container"
     >
-      {images.length
+      {images?.length
         ? images.map((image) => (
             <ImageGalery key={image.title + image.position} {...image} />
           ))

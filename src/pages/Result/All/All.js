@@ -245,10 +245,10 @@ export default function AllResults() {
       //   ],
       // };
 
-      setPages(data.organic);
-      setKnowledgeGraph(data.knowledgeGraph);
-      // setQuestions(data.peopleAlsoAsk);
-      setRelatedSearches(data.relatedSearches);
+      setPages(data?.organic);
+      setKnowledgeGraph(data?.knowledgeGraph);
+      // setQuestions(data?.peopleAlsoAsk);
+      setRelatedSearches(data?.relatedSearches);
       setIsLoaded(true);
     }
 
@@ -271,26 +271,28 @@ export default function AllResults() {
       <div className="grid grid-rows-[auto_auto_auto] grid-cols-12 flex-col gap-y-7.5 h-auto py-7.5 px-4 xs:px-7 sm:px-8.5">
         <div className="row-start-2 sm:row-start-1 row-end-3 col-start-1 lg:col-start-2 col-end-12 sm:col-end-8 lg:col-end-9 pe-5 flex flex-col gap-y-7.5">
           <div className="flex flex-col gap-y-7.5">
-            {isLoaded
+            {isLoaded && pages
               ? pages.map((page) => <WebSite key={page.position} {...page} />)
               : numberGenerator(0, 10).map((id) => (
                   <WebSite key={id} loading={true} />
                 ))}
           </div>
           {/* People Also Search */}
-          <div className="max-w-full w-162.5 text-[22px]">
-            <span>People also search for</span>
-            <div className="flex gap-y-4 flex-wrap -mx-2 mt-1.5">
-              {relatedSearches
-                ? relatedSearches.map((relatedSearch) => (
-                    <PeopleSearch
-                      key={relatedSearch.query}
-                      query={relatedSearch.query}
-                    />
-                  ))
-                : ""}
+          {relatedSearches ? (
+            <div className="max-w-full w-162.5 text-[22px]">
+              <span>People also search for</span>
+              <div className="flex gap-y-4 flex-wrap -mx-2 mt-1.5">
+                {relatedSearches.map((relatedSearch) => (
+                  <PeopleSearch
+                    key={relatedSearch.query}
+                    query={relatedSearch.query}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          ) : (
+            ""
+          )}
         </div>
 
         {knowledgeGraph ? (
