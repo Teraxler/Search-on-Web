@@ -3,6 +3,8 @@ import { getAutoCompeleteSuggestions } from "../../services/autoComplete.service
 import { CgSearch } from "react-icons/cg";
 import SuggestionItem from "./SuggestionItem";
 import { Link, useNavigate, useParams } from "react-router";
+import useLogger from "../../hooks/useLogger";
+// import searchResult from "../../data/autocomplete.json";
 
 export default function SearchBar(props) {
   const [searchValue, setSearchValue] = useState(props.searchValue ?? "");
@@ -12,25 +14,14 @@ export default function SearchBar(props) {
 
   const navigate = useNavigate();
 
+  useLogger(searchValue);
   useEffect(() => {
     let timeoutId = null;
 
     if (searchValue.trim()) {
       timeoutId = setTimeout(async () => {
         setSuggestions(await getAutoCompeleteSuggestions(searchValue));
-
-        // setSuggestions([
-        //   { value: "apple" },
-        //   { value: "apple tv" },
-        //   { value: "applebee's" },
-        //   { value: "apple watch" },
-        //   { value: "apple stock" },
-        //   { value: "apple music" },
-        //   { value: "applebees menu" },
-        //   { value: "apple support number" },
-        //   { value: "apple store near me" },
-        //   { value: "apple support" },
-        // ]);
+        // setSuggestions(searchResult.suggestions);
       }, 250);
     } else {
       setSuggestions([]);
@@ -76,7 +67,7 @@ export default function SearchBar(props) {
             />
             <Link
               // to={`/result/ai/${searchValue}`}
-              className="absolute end-4 top-1/2 -translate-y-1/2 flex gap-x-0.75 items-center justify-center text-[#1f1f1f] bg-[#f3f5f6] rounded-full h-8 ps-2 py-2 pe-3 cursor-pointer"
+              className="absolute end-4 top-1/2 -translate-y-1/2 flex gap-x-0.75 items-center justify-center text-eerie-black bg-[#f3f5f6] rounded-full h-8 ps-2 py-2 pe-3 cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

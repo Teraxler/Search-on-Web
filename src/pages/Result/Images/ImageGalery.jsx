@@ -41,7 +41,7 @@ export default function ImageGalery(props) {
         </div>
         <div className="mt-2 mx-1 mb-0.5">
           <a href={link} className="hover:*:first:underline">
-            <span className="text-xs text-[#5e5e5e]">{source}</span>
+            <span className="text-xs text-davy-grey">{source}</span>
             <p className="text-sm text-[#474747] line-clamp-1">{title}</p>
           </a>
         </div>

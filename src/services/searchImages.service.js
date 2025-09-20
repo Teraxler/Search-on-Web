@@ -1,7 +1,6 @@
 import { API_KEY, API_URL, MAX_NUMBER_OF_IMAGES } from "./constant";
 
 async function getSearchImages(query, page = 1) {
-  console.log("🚀 ~ getSearchImages ~ page:", page);
   try {
     const requestOptions = {
       method: "GET",

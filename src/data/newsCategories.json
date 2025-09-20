@@ -1,0 +1,9 @@
+{
+  "newsCategories": [
+    { "id": 1, "title": "آخرین خبر‌ها", "name": "latest" },
+    { "id": 2, "title": "اقتصادی", "name": "economy" },
+    { "id": 3, "title": "سیاسی", "name": "political" },
+    { "id": 4, "title": "ورزشی", "name": "sports" },
+    { "id": 5, "title": "سلامت", "name": "health" }
+  ]
+}

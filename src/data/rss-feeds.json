@@ -1,0 +1,43 @@
+{
+  "websites": [
+    "تسنیم",
+    "خبر آنلاین",
+    "باشگاه خبرنگاران جوان ",
+    "خبر فارسی",
+    "خبرگزاری مهر"
+  ],
+  "latest": [
+    "https://www.khabaronline.ir/rss",
+    "https://www.tasnimnews.com/fa/rss/feed/0/8/0/آخرین-خبرهای-روز",
+    "https://khabarfarsi.com/rss/top",
+    "https://www.mehrnews.com/rss?pl=8",
+    "https://www.yjc.ir/fa/rss/all/mostvisited"
+  ],
+  "economy": [
+    "https://www.khabaronline.ir/rss/tp/2",
+    "https://www.mehrnews.com/rss/tp/25",
+    "https://yjc.ir/fa/rss/6",
+    "https://khabarfarsi.com/rss/category/2471",
+    "https://www.tasnimnews.com/fa/rss/feed/0/7/7/اقتصادی"
+  ],
+  "political": [
+    "https://yjc.ir/fa/rss/3",
+    "https://www.mehrnews.com/rss/tp/7",
+    "https://khabarfarsi.com/rss/category/2470",
+    "https://www.tasnimnews.com/fa/rss/feed/0/7/1/سیاسی"
+  ],
+  "sports": [
+    "https://www.tasnimnews.com/fa/rss/feed/0/7/3/ورزشی",
+    "https://www.khabaronline.ir/rss/tp/6",
+    "https://yjc.ir/fa/rss/8",
+    "https://www.mehrnews.com/rss/tp/9",
+    "https://khabarfarsi.com/rss/category/2518"
+  ],
+  "health": [
+    "https://www.khabaronline.ir/rss/tp/1408",
+    "https://yjc.ir/fa/rss/7/",
+    "https://khabarfarsi.com/rss/category/2513",
+    "https://www.mehrnews.com/rss/tp/550",
+    "https://www.tasnimnews.com/fa/rss/feed/0/7/24/پزشکی"
+  ]
+}

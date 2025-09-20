@@ -12,7 +12,6 @@ async function getAutoCompeleteSuggestions(query) {
       requestOptions
     );
     const result = await response.json();
-    // console.log(result);
     return result.suggestions;
   } catch (error) {
     console.error(error);

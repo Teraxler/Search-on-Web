@@ -8,7 +8,7 @@ export default function Main() {
       <header className="h-15.5"></header>
       <main className="flex flex-col justify-center items-center">
         <Logo className="my-9.5 w-50 xs:w-60 sm:w-auto" />
-
+        {/* SearchBar */}
         <div className="flex flex-col items-center w-full px-5">
           <SearchBar />
         </div>

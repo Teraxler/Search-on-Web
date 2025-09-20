@@ -24,7 +24,7 @@ export default function WebSite(props) {
         </div>
       </div>
       <div>
-        <h3 className="relative text-xl text-[#1a0dab] mt-0.75 pt-1.25 line-clamp-1">
+        <h3 className="relative text-xl text-neon-blue mt-0.75 pt-1.25 line-clamp-1">
           <a className="hover:underline" href={link}>
             {title}
           </a>

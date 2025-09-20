@@ -1,6 +1,5 @@
-import SearchBar from "../../components/SearchBar/SearchBar";
-
 import { Link, useParams } from "react-router";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import Logo from "../../components/Logo/Logo";
 
 export default function Header() {
