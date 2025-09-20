@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc455eb6.css",
-    "main.js": "/static/js/main.cd3c57aa.js",
-    "static/media/Vazirmatn-VariableFont_wght.ttf": "/static/media/Vazirmatn-VariableFont_wght.6b4464ac54ace78cff2f.ttf",
-    "index.html": "/index.html",
-    "main.cc455eb6.css.map": "/static/css/main.cc455eb6.css.map",
-    "main.cd3c57aa.js.map": "/static/js/main.cd3c57aa.js.map"
+    "main.css": "/Search-on-Web/static/css/main.1f3af21c.css",
+    "main.js": "/Search-on-Web/static/js/main.cd3c57aa.js",
+    "static/media/Vazirmatn-VariableFont_wght.ttf": "/Search-on-Web/static/media/Vazirmatn-VariableFont_wght.6b4464ac54ace78cff2f.ttf",
+    "index.html": "/Search-on-Web/index.html",
+    "main.1f3af21c.css.map": "/Search-on-Web/static/css/main.1f3af21c.css.map",
+    "main.cd3c57aa.js.map": "/Search-on-Web/static/js/main.cd3c57aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc455eb6.css",
+    "static/css/main.1f3af21c.css",
     "static/js/main.cd3c57aa.js"
   ]
 }
