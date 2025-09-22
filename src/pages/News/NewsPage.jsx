@@ -1,16 +1,16 @@
 import { useMemo } from "react";
+import { Link } from "react-router";
 import Footer from "../../components/Footer/Footer";
 import HeaderNews from "./NewsHeader/NewsHeader";
-import NewsTitle from "./Widgets/NewsTitle";
-import NewsPicture from "./Widgets/NewsPicture";
-import rssLinks from "../../data/rss-feeds.json";
-import { shuffleArray } from "../../utils/arrayMethods";
+import NewsTitle from "../../components/NewsTitle/NewsTitle";
+import NewsPicture from "../../components/NewsPicture/NewsPicture";
 import NewsSection from "./NewsSection/NewsSection";
-import NewsItem from "./Widgets/NewsItem";
-import NewsItemMini from "./Widgets/NewsItemMini";
-import { Link } from "react-router";
+import NewsItem from "../../components/NewsItem/NewsItem";
+import MiniNewsItem from "../../components/MiniNewsItem/MiniNewsItem";
 import { FiChevronsLeft } from "react-icons/fi";
+import { shuffleArray } from "../../utils/arrayMethods";
 import useFetchFeeds from "../../hooks/useFetchFeeds";
+import rssLinks from "../../data/rss-feeds.json";
 
 export default function NewsPage() {
   const politicalFeeds = useFetchFeeds(rssLinks.political);
@@ -72,7 +72,7 @@ export default function NewsPage() {
             <div className="flex flex-wrap">
               {shuffledSportFeeds &&
                 shuffleArray(shuffledSportFeeds).map((feed) => (
-                  <NewsItemMini key={feed.guid} {...feed} />
+                  <MiniNewsItem key={feed.guid} {...feed} />
                 ))}
             </div>
             <div className="flex items-end">

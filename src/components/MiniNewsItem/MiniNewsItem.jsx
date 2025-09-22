@@ -1,5 +1,5 @@
-import { calcRelativeDateTimeDifference } from "../../../utils/dateTimeMethods";
-import noImage from "../../../assets/images/no-image.png";
+import { calcRelativeDateTimeDifference } from "../../utils/dateTimeMethods";
+import noImage from "../../assets/images/no-image.png";
 
 export default function NewsItemMini(props) {
   const { title, pubDate, link, author, enclosure } = props;

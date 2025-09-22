@@ -1,4 +1,4 @@
-import noImage from "../../../assets/images/no-image.png";
+import noImage from "../../assets/images/no-image.png";
 
 export default function NewsPicture(props) {
   const { title, link, enclosure } = props;

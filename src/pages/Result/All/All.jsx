@@ -3,9 +3,10 @@ import { useParams } from "react-router";
 import WebSite from "../../../components/WebSite/WebSite";
 import { getSearchResult } from "../../../services/search.service";
 import Pagination from "@mui/material/Pagination";
-import PeopleSearch from "./PeopleSearch";
-import IntroduceCard from "./IntroduceCard";
+import PeopleSearch from "../../../components/PeopleSearch/PeopleSearch";
+import IntroduceCard from "../../../components/IntroduceCard/IntroduceCard";
 import { numberGenerator } from "../../../utils/numberMethods";
+import SkeletonWebSite from "../../../components/WebSite/SkeletonWebSite";
 // import searchResult from "../../../data/search.json";
 
 export default function AllResults() {
@@ -64,7 +65,7 @@ export default function AllResults() {
             {isLoaded && pages
               ? pages.map((page) => <WebSite key={page.position} {...page} />)
               : numberGenerator(0, 10).map((id) => (
-                  <WebSite key={id} loading={true} />
+                  <SkeletonWebSite key={id} />
                 ))}
           </div>
           {/* People Also Search */}

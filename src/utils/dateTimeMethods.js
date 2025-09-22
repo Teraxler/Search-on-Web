@@ -130,5 +130,5 @@ export {
   formattingDateTime,
   calcRelativeDateTimeDifference,
   convertMilliSecondsToDateTime,
-  convertMonthToMonthName,i
+  convertMonthToMonthName,
 };

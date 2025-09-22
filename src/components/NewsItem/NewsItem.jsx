@@ -1,6 +1,6 @@
-import { calcRelativeDateTimeDifference } from "../../../utils/dateTimeMethods";
-import { stripHtml } from "../../../utils/stringMethods";
-import noImage from "../../../assets/images/no-image.png";
+import { calcRelativeDateTimeDifference } from "../../utils/dateTimeMethods";
+import { stripHtml } from "../../utils/stringMethods";
+import noImage from "../../assets/images/no-image.png";
 
 export default function NewsItem(props) {
   const { title, pubDate, link, author, description, enclosure } = props;

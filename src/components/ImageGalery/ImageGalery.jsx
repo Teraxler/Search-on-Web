@@ -1,4 +1,3 @@
-import Skeleton from "@mui/material/Skeleton";
 
 export default function ImageGalery(props) {
   const {
@@ -10,13 +9,12 @@ export default function ImageGalery(props) {
     title,
     link,
     source,
-    loading = false,
   } = props;
 
   const aspectRatio = thumbnailWidth / thumbnailHeight;
   const dynamicWidth = aspectRatio * 180;
 
-  return loading === false ? (
+  return (
     <div
       key={position}
       className="flex grow shrink"
@@ -44,23 +42,6 @@ export default function ImageGalery(props) {
             <span className="text-xs text-davy-grey">{source}</span>
             <p className="text-sm text-[#474747] line-clamp-1">{title}</p>
           </a>
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div
-      className="flex grow"
-      style={{
-        maxWidth: 280,
-        flexBasis: 200,
-        maxHeight: 228,
-      }}
-    >
-      <div className="w-full h-full">
-        <Skeleton height={180} className="rounded-xl" />
-        <div className="mt-2 mx-1 mb-0.5">
-          <Skeleton width={84} height={18} />
-          <Skeleton height={20} />
         </div>
       </div>
     </div>

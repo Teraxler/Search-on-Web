@@ -4,9 +4,9 @@ import NewsHeader from "./NewsHeader/NewsHeader";
 import NewsSection from "./NewsSection/NewsSection";
 import Footer from "../../components/Footer/Footer";
 import useFetchFeeds from "../../hooks/useFetchFeeds";
+import NewsTitle from "../../components/NewsTitle/NewsTitle";
+import NewsItem from "../../components/NewsItem/NewsItem";
 import rssFeedLinks from "../../data/rss-feeds.json";
-import NewsTitle from "./Widgets/NewsTitle";
-import NewsItem from "./Widgets/NewsItem";
 import { shuffleArray } from "../../utils/arrayMethods";
 
 export default function NewsByCategoryPage() {

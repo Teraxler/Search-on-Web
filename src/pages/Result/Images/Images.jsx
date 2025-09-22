@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import { getSearchImages } from "../../../services/searchImages.service";
-import ImageGalery from "./ImageGalery";
+import ImageGalery from "../../../components/ImageGalery/ImageGalery";
 import Loader from "../../../components/Loader/Loader";
 import { numberGenerator } from "../../../utils/numberMethods";
+import SkeletonImageGalery from "../../../components/ImageGalery/SkeletonImageGalery";
 // import searchResult from "../../../data/search-images.json";
 
 export default function ImageResults() {
@@ -80,9 +81,7 @@ export default function ImageResults() {
         ? images.map((image) => (
             <ImageGalery key={image.title + image.position} {...image} />
           ))
-        : numberGenerator(0, 50).map((id) => (
-            <ImageGalery key={id} loading={true} />
-          ))}
+        : numberGenerator(0, 50).map((id) => <SkeletonImageGalery key={id} />)}
 
       {isLoaderVisible ? (
         <div
