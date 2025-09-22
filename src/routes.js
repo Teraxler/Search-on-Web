@@ -13,11 +13,11 @@ export const routes = [
     element: <Result />,
   },
   {
-    path: "/news",
+    path: "/khabar",
     element: <NewsPage />,
   },
   {
-    path: "/news/:cat",
+    path: "/khabar/:cat",
     element: <NewsByCategoryPage />,
   },
   {

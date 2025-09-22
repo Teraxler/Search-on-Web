@@ -100,7 +100,7 @@ export default function NewsPage() {
             </div>
             <div className="flex items-end">
               <Link
-                to={"/news/sports"}
+                to={"/khabar/sports"}
                 className="flex items-center gap-x-0.5 text-[#d71920] ms-auto"
               >
                 بیشتر

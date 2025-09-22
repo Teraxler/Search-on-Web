@@ -19,7 +19,7 @@ export default function HeaderNews() {
                     ? "text-eerie-black"
                     : "hover:text-eerie-black"
                 }`}
-                to={`/news`}
+                to={`/khabar`}
               >
                 <span
                   className={`pb-2 mb-0.75 border-b-3 ${
@@ -42,7 +42,7 @@ export default function HeaderNews() {
                         isActive ? "text-eerie-black" : "hover:text-eerie-black"
                       }`
                     }
-                    to={`/news/${category.name}`}
+                    to={`/khabar/${category.name}`}
                   >
                     <span
                       className={`pb-2 mb-0.75 border-b-3 ${

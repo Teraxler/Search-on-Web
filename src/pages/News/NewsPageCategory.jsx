@@ -9,7 +9,6 @@ import NewsItem from "../../components/NewsItem/NewsItem";
 import rssFeedLinks from "../../data/rss-feeds.json";
 import { shuffleArray } from "../../utils/arrayMethods";
 import { numberGenerator } from "../../utils/numberMethods";
-import SkeletonNewsTitle from "../../components/NewsTitle/SkeletonNewsTitle";
 import SkeletonNewsItem from "../../components/NewsItem/SkeletonNewsItem";
 import Skeleton from "@mui/material/Skeleton";
 
@@ -33,7 +32,7 @@ export default function NewsByCategoryPage() {
           </NewsSection>
         </main>
         <aside className="flex flex-col gap-4 flex-1">
-          <NewsSection>
+          <NewsSection title={cat}>
             {shuffledFeeds.length
               ? shuffledFeeds.map((feed) => (
                   <NewsTitle key={feed.guid} {...feed} />
