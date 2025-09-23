@@ -1,7 +1,9 @@
-import Main from "./pages/Main/Main";
-import NewsPage from "./pages/News/NewsPage";
-import NewsByCategoryPage from "./pages/News/NewsPageCategory";
-import Result from "./pages/Result/Result";
+import { lazy } from "react";
+const Main = lazy(() => import("./pages/Main/Main"));
+const ImageResults = lazy(() => import("./pages/Results/ImageResults"));
+const AllResults = lazy(() => import("./pages/Results/AllResults"));
+const NewsPage = lazy(() => import("./pages/News/NewsPage"));
+const NewsByCategoryPage = lazy(() => import("./pages/News/NewsPageCategory"));
 
 export const routes = [
   {
@@ -9,16 +11,25 @@ export const routes = [
     element: <Main />,
   },
   {
-    path: "/result/:type/:q",
-    element: <Result />,
+    path: "/result",
+    children: [
+      { path: "", element: <Main /> },
+      { path: "all?/:q", element: <AllResults /> },
+      { path: "images/:q", element: <ImageResults /> },
+    ],
   },
   {
     path: "/khabar",
-    element: <NewsPage />,
-  },
-  {
-    path: "/khabar/:cat",
-    element: <NewsByCategoryPage />,
+    children: [
+      {
+        path: "",
+        element: <NewsPage />,
+      },
+      {
+        path: ":cat",
+        element: <NewsByCategoryPage />,
+      },
+    ],
   },
   {
     path: "/*",

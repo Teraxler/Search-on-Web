@@ -1,7 +1,7 @@
 import Header from "../../../components/Header/Header";
 import { NavLink, useParams } from "react-router";
 
-export default function ResultHeader() {
+export default function ResultsHeader() {
   const params = useParams();
 
   return (

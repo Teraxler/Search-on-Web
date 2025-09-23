@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useParams } from "react-router";
 import NewsHeader from "./NewsHeader/NewsHeader";
 import NewsSection from "./NewsSection/NewsSection";
@@ -15,8 +14,7 @@ import Skeleton from "@mui/material/Skeleton";
 export default function NewsByCategoryPage() {
   const { cat } = useParams();
   const webFeeds = useFetchFeeds(rssFeedLinks[cat]);
-
-  const shuffledFeeds = useMemo(() => shuffleArray(webFeeds), [webFeeds]);
+  const shuffledFeeds = shuffleArray(webFeeds);
 
   return (
     <>

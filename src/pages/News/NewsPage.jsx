@@ -25,14 +25,9 @@ export default function NewsPage() {
   const sportFeeds = useFetchFeeds(rssLinks.sports);
   const latestFeeds = useFetchFeeds(rssLinks.latest);
 
-
   const shuffledPoliticalFeeds = useMemo(
     () => shuffleArray(politicalFeeds).slice(0, 10),
     [politicalFeeds]
-  );
-  console.log(
-    "🚀 ~ NewsPage ~ shuffledPoliticalFeeds:",
-    shuffledPoliticalFeeds
   );
   const shuffledEconomyFeeds = useMemo(
     () => shuffleArray(economyFeeds).slice(0, 10),
@@ -50,6 +45,11 @@ export default function NewsPage() {
     () => shuffleArray(sportFeeds).slice(0, 10),
     [sportFeeds]
   );
+  
+  // console.log(
+  //   "🚀 ~ NewsPage ~ shuffledPoliticalFeeds:",
+  //   shuffledPoliticalFeeds
+  // );
 
   document.body.style.background = "#f6f6f6";
 
@@ -62,7 +62,7 @@ export default function NewsPage() {
           <NewsSection title={"آخرین خبر‌ها"}>
             {shuffledLatestFeeds.length
               ? shuffledLatestFeeds.map((feed) => (
-                  <NewsTitle key={feed.guid} {...feed} hasAuthor hasPubDate />
+                  <NewsTitle key={feed.guid} {...feed} showAuthor showPubDate />
                 ))
               : numberGenerator(0, 10).map((id) => (
                   <SkeletonNewsTitle key={id} />
@@ -86,6 +86,15 @@ export default function NewsPage() {
                 : numberGenerator(0, 10).map((id) => (
                     <SkeletonNewsPicture key={id} />
                   ))}
+            </div>
+            <div className="flex items-end">
+              <Link
+                to={"/khabar/economy"}
+                className="flex items-center gap-x-0.5 text-[#d71920] ms-auto"
+              >
+                بیشتر
+                <FiChevronsLeft />
+              </Link>
             </div>
           </NewsSection>
           <NewsSection title={"ورزشی"}>

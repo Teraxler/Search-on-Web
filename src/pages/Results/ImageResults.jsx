@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
-import { getSearchImages } from "../../../services/searchImages.service";
-import ImageGalery from "../../../components/ImageGalery/ImageGalery";
-import Loader from "../../../components/Loader/Loader";
-import { numberGenerator } from "../../../utils/numberMethods";
-import SkeletonImageGalery from "../../../components/ImageGalery/SkeletonImageGalery";
+import { getSearchImages } from "../../services/searchImages.service";
+import ImageGalery from "../../components/ImageGalery/ImageGalery";
+import Loader from "../../components/Loader/Loader";
+import { numberGenerator } from "../../utils/numberMethods";
+import SkeletonImageGalery from "../../components/ImageGalery/SkeletonImageGalery";
+import ResultHeader from "./ResultsHeader/ResultsHeader";
+import Footer from "../../components/Footer/Footer";
 // import searchResult from "../../../data/search-images.json";
 
 export default function ImageResults() {
@@ -71,28 +73,37 @@ export default function ImageResults() {
 
     getData();
   }, [query, currentPage]);
-
+  
   return (
-    <section
-      className="flex flex-wrap justify-start gap-5 p-5"
-      id="images-container"
-    >
-      {images?.length
-        ? images.map((image) => (
-            <ImageGalery key={image.title + image.position} {...image} />
-          ))
-        : numberGenerator(0, 50).map((id) => <SkeletonImageGalery key={id} />)}
-
-      {isLoaderVisible ? (
-        <div
-          className="flex items-center justify-center w-full h-45"
-          ref={loaderContainerRef}
+    <>
+      <ResultHeader />
+      <main>
+        <section
+          className="flex flex-wrap justify-start gap-5 p-5"
+          id="images-container"
         >
-          <Loader className="border-[#474554]" />
-        </div>
-      ) : (
-        ""
-      )}
-    </section>
+          {images?.length
+            ? images.map((image) => (
+                <ImageGalery key={image.title + image.position} {...image} />
+              ))
+            : numberGenerator(0, 50).map((id) => (
+                <SkeletonImageGalery key={id} />
+              ))}
+
+          {isLoaderVisible ? (
+            <div
+              className="flex items-center justify-center w-full h-45"
+              ref={loaderContainerRef}
+            >
+              <Loader className="border-[#474554]" />
+            </div>
+          ) : (
+            ""
+          )}
+        </section>
+      </main>
+
+      <Footer />
+    </>
   );
 }
