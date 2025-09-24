@@ -13,8 +13,10 @@ export default function ImageResults() {
   const params = useParams();
 
   const [images, setImages] = useState([]);
-  const [isLoaderVisible, setIsLoaderVisible] = useState(false);
-  const [query, setQuery] = useState(params.q ?? "");
+  const [isLoadingVisible, setIsLoadingVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // const [query, setQuery] = useState(params.q ?? "");
   const [currentPage, setCurrentPage] = useState(1);
 
   // const previousPageRef = useRef(currentPage);
@@ -41,39 +43,32 @@ export default function ImageResults() {
   }, []);
 
   useEffect(() => {
-    images?.length && setIsLoaderVisible(true);
-  }, [images]);
+    isLoadingVisible && observerRef.current.observe(loaderContainerRef.current);
+  }, [isLoadingVisible]);
 
   useEffect(() => {
-    isLoaderVisible && observerRef.current.observe(loaderContainerRef.current);
-  }, [isLoaderVisible]);
-
-  useEffect(() => {
-    if (params.q !== query) {
-      setQuery(params.q);
-      setImages([]);
-      setCurrentPage(1);
-    }
-  }, [params]);
+    setIsLoaded(false);
+    setCurrentPage(1);
+  }, [params.q]);
 
   useEffect(() => {
     async function getData() {
-      const data = await getSearchImages(query, currentPage);
+      const data = await getSearchImages(params.q, currentPage);
       // const data = searchResult.images;
 
-      if (data?.length === 0) {
-        setIsLoaderVisible(false);
-        return;
-      }
+      data?.length > 0 ? setIsLoadingVisible(true) : setIsLoadingVisible(false);
 
-      currentPage === 1
-        ? setImages(data)
-        : setImages((prevImages) => [...prevImages, ...data]);
+      if (currentPage === 1) {
+        setImages(data);
+        setIsLoaded(true);
+      } else {
+        setImages((prevImages) => [...prevImages, ...data]);
+      }
     }
 
     getData();
-  }, [query, currentPage]);
-  
+  }, [params.q, currentPage]);
+
   return (
     <>
       <ResultHeader />
@@ -82,7 +77,7 @@ export default function ImageResults() {
           className="flex flex-wrap justify-start gap-5 p-5"
           id="images-container"
         >
-          {images?.length
+          {isLoaded && images
             ? images.map((image) => (
                 <ImageGalery key={image.title + image.position} {...image} />
               ))
@@ -90,7 +85,7 @@ export default function ImageResults() {
                 <SkeletonImageGalery key={id} />
               ))}
 
-          {isLoaderVisible ? (
+          {isLoadingVisible ? (
             <div
               className="flex items-center justify-center w-full h-45"
               ref={loaderContainerRef}

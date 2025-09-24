@@ -1,8 +1,7 @@
 import { lazy } from "react";
 const Main = lazy(() => import("./pages/Main/Main"));
-const ImageResults = lazy(() => import("./pages/Results/ImageResults"));
-const AllResults = lazy(() => import("./pages/Results/AllResults"));
 const NewsPage = lazy(() => import("./pages/News/NewsPage"));
+const Results = lazy(() => import("./pages/Results/Results"));
 const NewsByCategoryPage = lazy(() => import("./pages/News/NewsPageCategory"));
 
 export const routes = [
@@ -11,11 +10,10 @@ export const routes = [
     element: <Main />,
   },
   {
-    path: "/result",
+    path: "/results",
     children: [
-      { path: "", element: <Main /> },
-      { path: "all?/:q", element: <AllResults /> },
-      { path: "images/:q", element: <ImageResults /> },
+      { index: true, element: <Main /> },
+      { path: ":type/:q", element: <Results /> },
     ],
   },
   {

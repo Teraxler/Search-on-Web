@@ -9,7 +9,7 @@ export default function ResultsHeader() {
       <Header />
       <div className="border-b border-gainsboro mt-25 px-4 xs:px-5">
         <nav className="grid grid-cols-12 ">
-          <ul className="col-start-1 lg:col-start-2 col-end-12 flex max-w-full overflow-x-auto text-[#70757a] font-medium text-sm">
+          <ul className="col-start-1 lg:col-start-2 col-end-12 flex max-w-full pb-0.75 overflow-x-auto text-[#70757a] font-medium text-sm">
             <li>
               <NavLink className="flex items-end h-12 px-2.5 xs:px-3 text-nowrap hover:text-eerie-black">
                 <span className="pb-2 mb-0.75 border-b-3 border-transparent">
@@ -24,7 +24,7 @@ export default function ResultsHeader() {
                     isActive ? "text-eerie-black" : "hover:text-eerie-black"
                   }`
                 }
-                to={`/result/all/${params.q}`}
+                to={`/results/all/${params.q}`}
               >
                 <span
                   className={`pb-2 mb-0.75 border-b-3 ${
@@ -44,7 +44,7 @@ export default function ResultsHeader() {
                     isActive ? "text-eerie-black" : "hover:text-eerie-black"
                   }`
                 }
-                to={`/result/images/${params.q}`}
+                to={`/results/images/${params.q}`}
               >
                 <span
                   className={`pb-2 mb-0.75 border-b-3 ${

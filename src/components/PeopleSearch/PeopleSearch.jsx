@@ -13,7 +13,7 @@ export default function PeopleSearch(porps) {
   return (
     <div className="flex-grow w-full md:w-[calc(50%-16px)] mx-2 bg-[#f7f8f9] rounded-lg">
       <Link
-        to={`/result/all/${porps.query}`}
+        to={`/results/all/${porps.query}`}
         onClick={scrollTop}
         className="flex items-center justify-between gap-x-4.5 py-3 pe-2 ps-4 hover:underline"
       >

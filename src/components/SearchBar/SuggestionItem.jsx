@@ -10,7 +10,7 @@ export default function SuggestionItem(props) {
       <div className="w-auto border-l-7 border-[#1a73e8] rounded-r-sm"></div>
       <Link
         onClick={() => props.onClick(props.value)}
-        to={`/result/${params.type ?? "all"}/${props.value}`}
+        to={`/results/${params.type ?? "all"}/${props.value}`}
         className="relative flex items-center gap-x-4 h-full px-4"
       >
         <CgSearch className="size-4" />

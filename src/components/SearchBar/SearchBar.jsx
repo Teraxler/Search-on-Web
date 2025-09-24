@@ -6,11 +6,11 @@ import { Link, useNavigate, useParams } from "react-router";
 import useLogger from "../../hooks/useLogger";
 // import searchResult from "../../data/autocomplete.json";
 
-export default function SearchBar(props) {
-  const [searchValue, setSearchValue] = useState(props.searchValue ?? "");
+export default function SearchBar() {
+  const params = useParams();
+  const [searchValue, setSearchValue] = useState(params.q ?? "");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const params = useParams();
 
   const navigate = useNavigate();
 
@@ -30,14 +30,11 @@ export default function SearchBar(props) {
     return () => clearTimeout(timeoutId);
   }, [searchValue]);
 
-  useEffect(() => {
-    params.q && setSearchValue(params.q);
-  }, [params]);
-
   function searchHandler(event) {
     event.preventDefault();
 
-    navigate(`/result/${params.type ?? "all"}/${searchValue}`);
+    console.log("🚀 ~ searchHandler ~ params.type:", params);
+    navigate(`/results/${params.type ?? "all"}/${searchValue}`);
     setShowSuggestions(false);
   }
 
@@ -66,7 +63,7 @@ export default function SearchBar(props) {
               type="search"
             />
             <Link
-              // to={`/result/ai/${searchValue}`}
+              // to={`/results/ai/${searchValue}`}
               className="absolute end-4 top-1/2 -translate-y-1/2 flex gap-x-0.75 items-center justify-center text-eerie-black bg-[#f3f5f6] rounded-full h-8 ps-2 py-2 pe-3 cursor-pointer"
             >
               <svg

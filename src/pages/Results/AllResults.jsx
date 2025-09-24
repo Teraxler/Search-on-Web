@@ -13,8 +13,6 @@ import Footer from "../../components/Footer/Footer";
 
 export default function AllResults() {
   const params = useParams();
-
-  const [query, setQuery] = useState(params.q ?? "");
   const [pages, setPages] = useState([]);
   // const [questions, setQuestions] = useState([]);
   const [knowledgeGraph, setKnowledgeGraph] = useState(null);
@@ -22,20 +20,11 @@ export default function AllResults() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    if (params.page && params.page !== currentPage) {
-      setCurrentPage(params.page);
-    }
-
-    if (params.q && params.q !== query) {
-      setQuery(params.q);
-      setIsLoaded(false);
-    }
-  }, [params]);
+  useEffect(() => setCurrentPage(1), [params.q]);
 
   useEffect(() => {
     async function fetchDate() {
-      const data = await getSearchResult(query, currentPage);
+      const data = await getSearchResult(params.q, currentPage);
       // const data = searchResult;
 
       setPages(data?.organic);
@@ -45,12 +34,12 @@ export default function AllResults() {
       setIsLoaded(true);
     }
 
+    setIsLoaded(false);
     fetchDate();
-  }, [currentPage, query]);
+  }, [currentPage, params.q]);
 
   function navigateHandler(page) {
     setCurrentPage(page);
-    setIsLoaded(false);
 
     window.scrollTo({
       top: 0,
