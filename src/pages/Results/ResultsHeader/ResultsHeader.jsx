@@ -9,9 +9,9 @@ export default function ResultsHeader() {
       <Header />
       <div className="border-b border-gainsboro mt-25 px-4 xs:px-5">
         <nav className="grid grid-cols-12 ">
-          <ul className="col-start-1 lg:col-start-2 col-end-12 flex max-w-full pb-0.75 overflow-x-auto text-[#70757a] font-medium text-sm">
+          <ul className="col-start-1 lg:col-start-2 col-end-12 flex max-w-full overflow-x-auto pb-0.75 text-nowrap text-[#70757a] font-medium text-sm">
             <li>
-              <NavLink className="flex items-end h-12 px-2.5 xs:px-3 text-nowrap hover:text-eerie-black">
+              <NavLink className="flex items-end h-12 px-2.5 xs:px-3 hover:text-eerie-black">
                 <span className="pb-2 mb-0.75 border-b-3 border-transparent">
                   هوش مصنوعی
                 </span>

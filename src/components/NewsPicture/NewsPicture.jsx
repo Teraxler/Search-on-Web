@@ -19,7 +19,9 @@ export default function NewsPicture(props) {
         className="text-[#0D4CDE] text-center max-w-51 line-clamp-2"
         title={title}
       >
-        <a target="_blank" href={link}>{title}</a>
+        <a target="_blank" href={link}>
+          {title}
+        </a>
       </h3>
     </div>
   );

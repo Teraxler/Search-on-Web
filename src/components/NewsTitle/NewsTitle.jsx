@@ -1,5 +1,5 @@
 export default function NewsTitle(props) {
-  const { title, pubDate, link, author } = props;
+  const { title, pubDate, link, author, showPubDate, showAuthor } = props;
 
   return (
     <div className="flex justify-between gap-x-4 text-xs p-1 border-b border-b-[#eeeeee]">
@@ -9,10 +9,10 @@ export default function NewsTitle(props) {
         </a>
       </h4>
       <div className="hidden sm:flex gap-x-1 text-[#7b7b7b]">
-        {pubDate && props.hasPubDate && <span>{pubDate.slice(11, 16)}</span>}
-        {props.hasAuthor && (
+        {showPubDate && pubDate && <span>{pubDate.slice(11, 16)}</span>}
+        {showAuthor && author && (
           <>
-            {author ? " | " : ""}
+            {" | "}
             <span className="max-w-25 line-clamp-1">{author}</span>
           </>
         )}

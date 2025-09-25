@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import WebSite from "../../components/WebSite/WebSite";
 import { getSearchResult } from "../../services/search.service";
-import Pagination from "@mui/material/Pagination";
+import Pagination from "../../components/Pagination/Pagination";
 import PeopleSearch from "../../components/PeopleSearch/PeopleSearch";
 import IntroduceCard from "../../components/IntroduceCard/IntroduceCard";
 import { numberGenerator } from "../../utils/numberMethods";
@@ -92,7 +92,7 @@ export default function AllResults() {
             <Pagination
               count={10}
               page={currentPage}
-              onChange={(event, page) => navigateHandler(page)}
+              onChange={navigateHandler}
             />
           </div>
         </div>

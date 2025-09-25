@@ -5,7 +5,7 @@ function pad(num, length = 2) {
 function stripHtml(html) {
   const div = document.createElement("div");
   div.innerHTML = html;
-  return div.innerHTML;
+  return div.textContent;
 }
 
 function parseXml(xml) {
@@ -18,24 +18,10 @@ function parseHtml(html) {
   return parser.parseFromString(html, "text/html");
 }
 
-function xml2json(xml) {
-  const xmlParsed = parseXml(xml)
-  
-  const xml2jsonMap = {
-    "<title>": `title`,
-    "</title>": `,`,
-    "<item>": `item`,
-    "</item>": `,`,
-    // "<title>": `title`,
-    // "<title>": `title`,
-    // "<title>": `title`,
-  }
-
-  // const json = xml.replaceAll(/[<>/]/, xml2jsonMap)
-  // console.log("🚀 ~ xml2json ~ json:", json)
-console.log(xmlParsed);
-
-  console.log(xmlParsed);
+function linkFinder(text) {
+  return String(text).match(
+    /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+  );
 }
 
-export { pad, stripHtml, xml2json ,parseXml, parseHtml};
+export { pad, stripHtml, parseXml, parseHtml, linkFinder };

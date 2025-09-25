@@ -9,6 +9,7 @@
   --breakpoint-xs: 30rem;
   --font-vazirmatn: "Vazirmatn", sans-serif;
 
+  --color-primary: #d71920;
   --color-gainsboro: #dadce0;
   --color-neon-blue: #1a0dab;
   --color-eerie-black: #1f1f1f;
@@ -41,3 +42,25 @@
     @apply font-vazirmatn;
   }
 }
+
+/* @layer utilities {
+    .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f7f4ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #e0cbcb;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #c0a0b9;
+  }
+} */

@@ -90,7 +90,7 @@ export default function NewsPage() {
             <div className="flex items-end">
               <Link
                 to={"/khabar/economy"}
-                className="flex items-center gap-x-0.5 text-[#d71920] ms-auto"
+                className="flex items-center gap-x-0.5 text-primary ms-auto"
               >
                 بیشتر
                 <FiChevronsLeft />
@@ -110,7 +110,7 @@ export default function NewsPage() {
             <div className="flex items-end">
               <Link
                 to={"/khabar/sports"}
-                className="flex items-center gap-x-0.5 text-[#d71920] ms-auto"
+                className="flex items-center gap-x-0.5 text-primary ms-auto"
               >
                 بیشتر
                 <FiChevronsLeft />
@@ -131,9 +131,9 @@ export default function NewsPage() {
               {rssLinks.websites &&
                 rssLinks.websites.map((website) => (
                   <div key={website} className="p-2 w-1/3">
-                    <a className="line-clamp-1" title={website}>
+                    <span className="line-clamp-1" title={website}>
                       {website}
-                    </a>
+                    </span>
                   </div>
                 ))}
             </div>

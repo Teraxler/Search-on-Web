@@ -2,14 +2,14 @@
   "websites": [
     "تسنیم",
     "خبر آنلاین",
+    "پایگاه خبری آفتاب",
     "باشگاه خبرنگاران جوان ",
-    "خبر فارسی",
     "خبرگزاری مهر"
   ],
   "latest": [
     "https://www.khabaronline.ir/rss",
     "https://www.tasnimnews.com/fa/rss/feed/0/8/0/آخرین-خبرهای-روز",
-    "https://khabarfarsi.com/rss/top",
+    "https://aftabnews.ir/fa/rss/allnews",
     "https://www.mehrnews.com/rss?pl=8",
     "https://www.yjc.ir/fa/rss/all/mostvisited"
   ],
@@ -17,13 +17,13 @@
     "https://www.khabaronline.ir/rss/tp/2",
     "https://www.mehrnews.com/rss/tp/25",
     "https://yjc.ir/fa/rss/6",
-    "https://khabarfarsi.com/rss/category/2471",
+    "https://aftabnews.ir/fa/rss/2",
     "https://www.tasnimnews.com/fa/rss/feed/0/7/7/اقتصادی"
   ],
   "political": [
     "https://yjc.ir/fa/rss/3",
     "https://www.mehrnews.com/rss/tp/7",
-    "https://khabarfarsi.com/rss/category/2470",
+    "https://aftabnews.ir/fa/rss/5",
     "https://www.tasnimnews.com/fa/rss/feed/0/7/1/سیاسی"
   ],
   "sports": [
@@ -31,12 +31,12 @@
     "https://www.khabaronline.ir/rss/tp/6",
     "https://yjc.ir/fa/rss/8",
     "https://www.mehrnews.com/rss/tp/9",
-    "https://khabarfarsi.com/rss/category/2518"
+    "https://aftabnews.ir/fa/rss/8"
   ],
   "health": [
     "https://www.khabaronline.ir/rss/tp/1408",
     "https://yjc.ir/fa/rss/7/",
-    "https://khabarfarsi.com/rss/category/2513",
+    "https://aftabnews.ir/fa/rss/6",
     "https://www.mehrnews.com/rss/tp/550",
     "https://www.tasnimnews.com/fa/rss/feed/0/7/24/پزشکی"
   ]

@@ -3,7 +3,6 @@ import { getAutoCompeleteSuggestions } from "../../services/autoComplete.service
 import { CgSearch } from "react-icons/cg";
 import SuggestionItem from "./SuggestionItem";
 import { Link, useNavigate, useParams } from "react-router";
-import useLogger from "../../hooks/useLogger";
 // import searchResult from "../../data/autocomplete.json";
 
 export default function SearchBar() {
@@ -14,7 +13,6 @@ export default function SearchBar() {
 
   const navigate = useNavigate();
 
-  useLogger(searchValue);
   useEffect(() => {
     let timeoutId = null;
 
@@ -33,7 +31,6 @@ export default function SearchBar() {
   function searchHandler(event) {
     event.preventDefault();
 
-    console.log("🚀 ~ searchHandler ~ params.type:", params);
     navigate(`/results/${params.type ?? "all"}/${searchValue}`);
     setShowSuggestions(false);
   }

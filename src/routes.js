@@ -20,7 +20,7 @@ export const routes = [
     path: "/khabar",
     children: [
       {
-        path: "",
+        index: true,
         element: <NewsPage />,
       },
       {
