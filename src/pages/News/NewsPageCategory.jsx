@@ -48,7 +48,7 @@ export default function NewsByCategoryPage() {
       <div className="container mx-auto flex flex-col-reverse lg:flex-row gap-4 p-4">
         <main className="flex flex-col gap-y-4 flex-2">
           <NewsSection title={categoryTitle}>
-            {currentPageFeeds
+            {currentPageFeeds.length
               ? currentPageFeeds.map((feed) => (
                   <NewsItem key={feed.guid} {...feed} />
                 ))
@@ -59,7 +59,7 @@ export default function NewsByCategoryPage() {
         </main>
         <aside className="flex flex-col gap-4 flex-1">
           <NewsSection title={categoryTitle}>
-            {shuffledFeeds
+            {shuffledFeeds.length
               ? shuffledFeeds.map((feed) => (
                   <NewsTitle key={feed.guid} {...feed} />
                 ))
