@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-// import { XMLParser } from "fast-xml-parser";
-// import { parse } from "rss-to-json";
-
-// const parser = new XMLParser();
-
 export default function useFetchFeeds(urls) {
   const [webFeeds, setWebFeeds] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,11 +22,11 @@ export default function useFetchFeeds(urls) {
 
         const rssResult = await Promise.allSettled(allResponse);
 
-        rssResult.flatMap((rss) => {
-          return rss.status === "fulfilled" ? rss.value.items : "";
-        });
-
-        setWebFeeds(rssResult.flatMap((rss) => rss.value.items));
+        setWebFeeds(() =>
+          rssResult.flatMap((rss) =>
+            rss.status === "fulfilled" ? rss.value.items : []
+          )
+        );
       } catch (error) {
         setError(error);
       } finally {
